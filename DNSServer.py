@@ -42,7 +42,7 @@ def decrypt_with_aes(encrypted_data, password, salt):
     decrypted_data = f.decrypt(encrypted_data) #call the Fernet decrypt method
     return decrypted_data.decode('utf-8')
 
-salt = bytes('Tandon', 'utf-8') # Remember it should be a byte-object
+salt = b'Tandon' # Remember it should be a byte-object
 password = 'ar6246@nyu.edu'
 input_string = 'AlwaysWatching'
 
@@ -78,77 +78,21 @@ dns_records = {
 
     'safebank.com.': {
         dns.rdatatype.A: '192.168.1.102',
-        dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],  # List of (preference, mail server) tuples
-        dns.rdatatype.CNAME: 'www.example.com.',
-        dns.rdatatype.NS: 'ns.example.com.',
-        dns.rdatatype.TXT: ('This is a TXT record',),
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],
-        dns.rdatatype.SOA: (
-            'ns1.example.com.', #mname
-            'admin.example.com.', #rname
-            2023081401, #serial
-            3600, #refresh
-            1800, #retry
-            604800, #expire
-            86400, #minimum
-        ),
+
     },
       'google.com ': {
         dns.rdatatype.A: '192.168.1.103',
-        dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],  # List of (preference, mail server) tuples
-        dns.rdatatype.CNAME: 'www.example.com.',
-        dns.rdatatype.NS: 'ns.example.com.',
-        dns.rdatatype.TXT: ('This is a TXT record',),
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],
-        dns.rdatatype.SOA: (
-            'ns1.example.com.', #mname
-            'admin.example.com.', #rname
-            2023081401, #serial
-            3600, #refresh
-            1800, #retry
-            604800, #expire
-            86400, #minimum
-        ),
+
     },
 
       'legitsite.com.': {
         dns.rdatatype.A: '192.168.1.104',
-        dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],  # List of (preference, mail server) tuples
-        dns.rdatatype.CNAME: 'www.example.com.',
-        dns.rdatatype.NS: 'ns.example.com.',
-        dns.rdatatype.TXT: ('This is a TXT record',),
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],
-        dns.rdatatype.SOA: (
-            'ns1.example.com.', #mname
-            'admin.example.com.', #rname
-            2023081401, #serial
-            3600, #refresh
-            1800, #retry
-            604800, #expire
-            86400, #minimum
-        ),
+
     },
 
         'yahoo.com .': {
         dns.rdatatype.A: '192.168.1.105',
-        dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],  # List of (preference, mail server) tuples
-        dns.rdatatype.CNAME: 'www.example.com.',
-        dns.rdatatype.NS: 'ns.example.com.',
-        dns.rdatatype.TXT: ('This is a TXT record',),
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],
-        dns.rdatatype.SOA: (
-            'ns1.example.com.', #mname
-            'admin.example.com.', #rname
-            2023081401, #serial
-            3600, #refresh
-            1800, #retry
-            604800, #expire
-            86400, #minimum
-        ),
+
     },
 
         'nyu.edu': {
@@ -158,16 +102,7 @@ dns_records = {
         dns.rdatatype.CNAME: 'www.example.com.',
         dns.rdatatype.NS: 'ns1.nyu.edu.',
         dns.rdatatype.TXT: str(encrypted_value),
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],
-        dns.rdatatype.SOA: (
-            'ns1.example.com.', #mname
-            'admin.example.com.', #rname
-            2023081401, #serial
-            3600, #refresh
-            1800, #retry
-            604800, #expire
-            86400, #minimum
-        ),
+
     },
 
     
